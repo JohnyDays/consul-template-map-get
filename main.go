@@ -9,13 +9,13 @@ import (
 )
 
 func main() {
+
 	path := os.Args[1]
-	fmt.Println(path)
 
 	jsonString := os.Args[2]
 
 	var tree map[string]interface{}
-	err1 := json.Unmarshal([]byte(jsonString), &tree)
+	_ := json.Unmarshal([]byte(jsonString), &tree)
 
 	values := make(map[string]interface{})
 
@@ -23,10 +23,8 @@ func main() {
 		values[key] = deepGet(value, path)
 	}
 
-	outputJSON, err := json.Marshal(values)
+	outputJSON, _ := json.Marshal(values)
 
-	fmt.Println(err1)
-	fmt.Println(err)
 	fmt.Println(string(outputJSON))
 }
 
