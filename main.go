@@ -15,7 +15,7 @@ func main() {
 	jsonString := os.Args[2]
 
 	var tree map[string]interface{}
-	_ := json.Unmarshal([]byte(jsonString), &tree)
+	_ = json.Unmarshal([]byte(jsonString), &tree)
 
 	values := make(map[string]interface{})
 
